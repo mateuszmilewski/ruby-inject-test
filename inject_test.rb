@@ -15,6 +15,18 @@ arr.reduce(:+) # 15 -> same thing
 arr.inject(10) { |sum,e| sum + e } # 25
 
 
+# now same thing with multiplication
+# all the same
+arr.inject(0) { |sum,e| sum * e } # 120
+arr.reduce(0) { |sum,e| sum * e } # 120
+arr.inject() { |sum,e| sum * e } # 120
+arr.reduce() { |sum,e| sum * e } # 120
+
+# and now interesting:
+arr.inject(:*) # 120 -> this is a shortcut
+arr.reduce(:*) # 120 -> same thing
+
+
 # some kind of explanation
 arr.reduce() { |x, y| p x, y }
 # output:
