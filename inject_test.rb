@@ -7,6 +7,10 @@ arr.reduce(0) { |sum,e| sum + e } # 15
 arr.inject() { |sum,e| sum + e } # 15
 arr.reduce() { |sum,e| sum + e } # 15
 
+# and now interesting:
+arr.inject(:+) # 15 -> this is a shortcut
+arr.reduce(:+) # 15 -> same thing
+
 # but starting from 10
 arr.inject(10) { |sum,e| sum + e } # 25
 
